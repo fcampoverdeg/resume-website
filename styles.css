@@ -1,0 +1,508 @@
+/* Canvas */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Brush Script MT", cursive;
+}
+
+/* Navigation Menu */
+.profile {
+  background: #19022d;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 300px;
+  z-index: 9997;
+  transition: all 0.5s ease;
+  padding: 0 15px;
+  overflow-y: auto;
+}
+
+.img-rounded {
+  max-width: 60%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px 0;
+  border-radius: 100%;
+  background-color: transparent;
+}
+
+.name {
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.social-links {
+  font-size: 18px;
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  line-height: 2;
+  padding: 15px 0;
+  width: 100%;
+  height: 36px;
+
+  .social-media {
+    color: #fff;
+    padding: 1rem;
+  }
+}
+
+.nav-menu {
+  color: #fff;
+  list-style: none;
+  background: transparent;
+  display: flow;
+  align-items: left;
+  line-height: 4;
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  padding: 10px 15px;
+}
+
+.nav-links {
+  color: #fff;
+}
+
+/* Hovers */
+
+.social-media:hover {
+  color: #7df9ff;
+  transition: all 0.3s ease;
+}
+
+.nav-links:hover {
+  color: #a020f0;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Set Up */
+
+@media screen and (max-width: 960px) {
+  /* Mobile Menu */
+  .profile {
+    top: -100;
+    left: -1000px;
+    opacity: 0;
+    height: 100%;
+    width: 300px;
+    z-index: 100;
+    transition: all 3s ease;
+    position: fixed;
+  }
+
+  .profile.active {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 1;
+    transition: all 0.9s ease;
+    height: 100%;
+    width: 300px;
+    padding: 0 15px;
+    overflow-y: auto;
+  }
+
+  /* Mobile Nav Toggle Button */
+  .mobile-nav-toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.5s ease-in-out;
+    background: #fff;
+  }
+
+  .mobile-nav-toggle .bar {
+    display: block;
+    cursor: pointer;
+    right: 100px;
+    top: 100;
+  }
+
+  /* Mobile Menu Animations */
+  #mobile-menu {
+    position: absolute;
+    top: 3%;
+    right: 5%;
+    transform: translate(5%, 20%);
+  }
+
+  #mobile-menu.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  #mobile-menu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #mobile-menu.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+/* ======= Cover ======= */
+
+.cover {
+  margin: 0;
+  padding: 0;
+  background: url("img/Me.jpg");
+  z-index: -9999 !important;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Title */
+.title {
+  font-size: 34px;
+  font-weight: 600;
+  margin: 0 0 -15rem 0;
+}
+
+/* Animated Text */
+.animated-text {
+  font-size: 34px;
+  font-weight: 600;
+  min-width: 280px;
+  position: relative;
+  display: inline-block;
+}
+/*
+.animated-text span {
+  position: relative;
+}
+
+.animated-text span::before {
+  content: "Designer";
+  color: #fff;
+  position: relative;
+  overflow: visible;
+  animation: words 20s infinite;
+}
+
+.animated-text span::after {
+  content: " ";
+  position: absolute;
+  display: inline-block;
+  width: calc(100% + 8px);
+  height: 100%;
+  overflow: visible;
+  background-color: #232323;
+  border-left: 2px solid #fff;
+  right: -8px;
+  animation: cursor 0.8s infinite, typing 20s steps(14) infinite;
+}
+*/
+
+.animated-text span {
+  content: " ";
+  position: absolute;
+  display: inline-block;
+  height: 100%;
+  width: 60%;
+  overflow: hidden;
+  border-right: 2px solid #fff;
+  animation:
+    cursor 0.8s infinite,
+    typing 20s steps(14) infinite;
+}
+
+.animated-text span::before {
+  content: "Designer";
+  color: #fff;
+  text-decoration: underline #a020f0;
+  animation: words 20s infinite;
+}
+
+@keyframes cursor {
+  to {
+    border-right: 2px solid #ffffff00;
+  }
+}
+
+@keyframes words {
+  0%,
+  05% {
+    content: " ";
+  }
+  06%,
+  20% {
+    content: "DPM";
+  }
+  21%,
+  40% {
+    content: "Developer";
+  }
+  41%,
+  60% {
+    content: "Programmer";
+  }
+  61%,
+  80% {
+    content: "Designer";
+  }
+  81%,
+  100% {
+    content: "Student";
+  }
+}
+
+@keyframes typing {
+  10%,
+  15%,
+  30%,
+  35%,
+  50%,
+  55%,
+  70%,
+  75%,
+  90%,
+  95% {
+    width: calc(70% + 8px);
+  }
+  5%,
+  20%,
+  25%,
+  40%,
+  45%,
+  60%,
+  65%,
+  80%,
+  85% {
+    width: 0;
+  }
+}
+
+/* ======= Cover End ======= */
+
+/* ======= About ======= */
+
+.about {
+  background: #1f1f1f;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+
+  /* ======= About Container ======= */
+
+  .about-container {
+    margin: 0 10% 0 15.5%;
+    padding: 4% 13%;
+    background: #1f1f1f;
+    height: 20vh;
+    font-family: "Open Sans", sans-serif;
+
+    /* ======= About Header ======= */
+    .section-title {
+      padding-bottom: 30px;
+      line-height: 1.2;
+      margin-top: 0;
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #7f7fff;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        position: relative;
+      }
+
+      h2::after {
+        content: " ";
+        position: absolute;
+        display: block;
+        width: 50px;
+        height: 3px;
+        background: #a020f0;
+        bottom: 0;
+      }
+
+      p {
+        font-size: 15px;
+        color: #d3d3d3;
+        margin-top: 2;
+      }
+    }
+  }
+
+  /* ======= About Header End ======= */
+
+  /* ======= About Information  ======= */
+
+  .about-row {
+    margin: 0 10% 0 15.5%;
+    padding: 1% 13%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "Open Sans", sans-serif;
+
+    /* ======= Profile Picture ======= */
+    .about-picture {
+      flex: 0 0 20.333333%;
+      max-width: 20.333333%;
+      align-items: center;
+      text-align: center;
+      justify-text: center;
+
+      .img-fluid {
+        max-width: 100%;
+        height: auto;
+        vertical-align: middle;
+        border-style: none;
+      }
+    }
+    /* ======= Profile Picture End ======= */
+
+    /* ======= Personal Information ======= */
+
+    .about-me {
+      padding-top: 0 !important;
+      flex: 0 0 66.666667%;
+      max-width: 66.666667%;
+
+      h3 {
+        color: #7f7fff;
+        font-weight: 700;
+        font-size: 26px;
+        font-family: "Raleway", sans-serif;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        margin-left: 1.2rem;
+        line-height: 1.2;
+        padding-left: 15px;
+      }
+
+      .about-me-row {
+        display: flex;
+        font-family: "Open Sans", sans-serif;
+
+        .col-lg-6 {
+          position: relative;
+          width: 100%;
+          padding-top: 20px;
+          padding-right: 40px;
+          padding-left: 40px;
+
+          ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 0;
+            margin-bottom: 1rem;
+
+            li {
+              padding-bottom: 10px;
+              color: #d3d3d3;
+
+              i {
+                font-size: 15px;
+                color: #7f7fff;
+              }
+            }
+          }
+        }
+
+        .col-lg-8 {
+          flex: 0 0 50%;
+          max-width: 50%;
+          padding-top: 20px;
+
+          ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 0;
+            margin-bottom: 1rem;
+
+            li {
+              padding-bottom: 10px;
+              font-size: 15px;
+              color: #d3d3d3;
+
+              i {
+                font-size: 15px;
+                color: #7f7fff;
+              }
+            }
+          }
+        }
+      }
+      .description {
+        padding-top: 0 !important;
+        flex: 0 0 66.666667%;
+        color: #d3d3d3;
+        padding: 40px;
+        height: 100%;
+        width: 85%;
+        overflow: hidden;
+      }
+    }
+    /* ======= Personal Information End ======= */
+  }
+  /* ======= About Information End ======= */
+}
+/* ======= About End ======= */
+
+/* ======= Facts ======= */
+.facts {
+  background: #232323;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+
+  .facts-container {
+    margin: 0 10% 0 15.5%;
+    padding: 4.5% 13%;
+    background-color: #232323;
+    height: auto;
+    font-family: "Open Sans", sans-serif;
+
+    .facts-information {
+      h4 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #7f7fff;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        position: relative;
+      }
+
+      h4::after {
+        content: " ";
+        position: absolute;
+        display: block;
+        width: 50px;
+        height: 3px;
+        background: #a020f0;
+        bottom: 0;
+      }
+
+      ul {
+        list-style: none;
+        padding: 10px 0;
+
+        li {
+          font-size: 15px;
+          color: #d3d3d3;
+          padding: 10px;
+
+          i {
+            color: #a020f0;
+          }
+        }
+      }
+    }
+  }
+}
